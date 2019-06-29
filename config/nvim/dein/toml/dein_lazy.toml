@@ -1,0 +1,52 @@
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+hook_source = '''
+augroup GoCommands
+  autocmd!
+  autocmd FileType go nnoremap <Leader>r  :<C-U>ReGoRun<CR>
+  autocmd FileType go nnoremap <Leader>c  :<C-U>KillGoRunResult<CR>
+augroup END
+
+command! -nargs=0 ReGoRun call ReCallGoRun()
+function! ReCallGoRun()
+  call KillGoRunResult()
+  call go#cmd#Run(!g:go_jump_to_error)
+endfunction
+
+command! -nargs=0 KillGoRunResult call KillGoRunResult()
+function! KillGoRunResult()
+  let s:bf_name = bufname('go run')
+  if s:bf_name == ""
+    return
+  endif
+  let s:bf = bufnr(s:bf_name)
+  execute 'bdelete! ' . s:bf
+endfunction
+'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertCharPre'
+hook_source = '''
+  let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'deoplete-plugins/deoplete-go'
+build = 'make'
+on_ft = 'go'
+hook_add = '''
+  let g:deoplete#sources#go#gocode_binary = expand('~/go/src/github.com/stamblerre/gocode')
+'''
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+on_ft = ['help']
+hook_source = '''
+  set helplang=ja,en
+'''
+
+[[plugins]]
+repo = 'diepm/vim-rest-console'
+on_ft = 'rest'
