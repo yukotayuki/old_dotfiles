@@ -1,0 +1,42 @@
+export ZPLUG_HOME=/usr/local/opt/zplug
+
+if [[ -f $ZPLUG_HOME/init.zsh ]]; then
+  source $ZPLUG_HOME/init.zsh
+  source ~/.zsh/zplug
+
+  # Install plugins if there are plugins that have not been installed
+  if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+      echo; zplug install
+    fi
+  fi
+
+  # Then, source plugins and add commands to $PATH
+  zplug load
+fi
+
+source ~/.zsh/configs/aliases.zsh
+source ~/.zsh/configs/setopt.zsh
+source ~/.zsh/configs/misc.zsh
+source ~/.zsh/configs/anyenv.zsh
+#source ~/.zsh/configs/pwl.zsh
+source ~/.zsh/configs/pwl-py.zsh
+#source ~/.zsh/configs/p9k.zsh
+
+#powerline-daemon -q
+#. /Users/joo/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+#OS_ICON='%F{cyan} \uf302 %F{white}Mac OS%f'
+#OS_ICON='%F{cyan} \uf302%f'
+
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh

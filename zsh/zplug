@@ -1,0 +1,24 @@
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+#zplug "~/.zsh", from:local, use:"<->_*.zsh"
+#zplug "~/.zsh/configs", from:local, use:"*.zsh"
+
+# theme
+#zplug "mafredri/zsh-async", from:github
+#zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
+# 構文のハイライト(https://github.com/zsh-users/zsh-syntax-highlighting)
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# history関係
+zplug "zsh-users/zsh-history-substring-search"
+# タイプ補完
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "chrissicool/zsh-256color"
+zplug "felixr/docker-zsh-completion"
+#zplug "b4b4r07/zsh-gomi"
+zplug "peco/peco", as:command, from:gh-r
+zplug "mollifier/anyframe"
+
+#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme, as:theme, defer:3
+#DEFAULT_USER='davy'

@@ -60,10 +60,10 @@ set smartindent
 set number
 colorscheme gruvbox
 set background=dark
-set ambiwidth=double
 
 "tabline -----------------
 set showtabline=2
+
 " The prefix key.
 nnoremap  [Tag]   <Nop>
 nmap s [Tag]
