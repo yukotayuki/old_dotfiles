@@ -4,7 +4,8 @@
 #
 ###################################################
 
-alias ls="ls -G"
+#alias ls="ls -G"
+alias ls="lsd"
 alias l='ls'
 alias vim='nvim'
 alias ll='ls -l'
@@ -17,3 +18,4 @@ alias pyinstaller='pyinstaller --additional-hooks-dir ./'
 alias pyins_hooks_list='ls ~/.pyenv/versions/3.7.3/lib/python3.7/site-packages/PyInstaller/hooks/'
 #alias search_file='find * -type f -print | xargs grep '
 alias aws_gip="aws ec2 describe-instances | jq '.Reservations[].Instances[].PublicIpAddress'"
+alias tsource="tmux source"

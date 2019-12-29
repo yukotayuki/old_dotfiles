@@ -21,7 +21,14 @@ source ~/.zsh/configs/setopt.zsh
 source ~/.zsh/configs/misc.zsh
 source ~/.zsh/configs/anyenv.zsh
 #source ~/.zsh/configs/pwl.zsh
-source ~/.zsh/configs/pwl-py.zsh
+#if [[ "$(pyenv version)" =~ ^3 ]]; then
+#  echo "yyy"
+  source ~/.zsh/configs/pwl-py.zsh
+#else
+#  echo "ttt"
+#  precmd_functions=
+#  PS1="%m%#"
+#fi
 #source ~/.zsh/configs/p9k.zsh
 
 #powerline-daemon -q
@@ -30,13 +37,3 @@ source ~/.zsh/configs/pwl-py.zsh
 #OS_ICON='%F{cyan} \uf302 %F{white}Mac OS%f'
 #OS_ICON='%F{cyan} \uf302%f'
 
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/joo/.ndenv/versions/v8.10.0/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh

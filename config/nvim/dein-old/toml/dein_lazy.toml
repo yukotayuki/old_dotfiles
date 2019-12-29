@@ -26,19 +26,40 @@ endfunction
 '''
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_event = 'InsertCharPre'
-hook_source = '''
-  let g:deoplete#enable_at_startup = 1
-'''
-
-[[plugins]]
 repo = 'deoplete-plugins/deoplete-go'
 build = 'make'
 on_ft = 'go'
 hook_add = '''
   let g:deoplete#sources#go#gocode_binary = expand('~/go/src/github.com/stamblerre/gocode')
 '''
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = 'vue'
+# hook_add = '''
+# set iskeyword+=$
+# set iskeyword+=-
+# autocmd MyAutoCmd FileType vue syntax sync fromstart
+# let g:ft = ''
+# function! NERDCommenter_before()
+#   if &ft == 'vue'
+#     let g:ft = 'vue'
+#     let stack = synstack(line('.'), col('.'))
+#     if len(stack) > 0
+#       let syn = synIDattr((stack)[0], 'name')
+#       if len(syn) > 0
+#         exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+#       endif
+#     endif
+#   endif
+# endfunction
+# function! NERDCommenter_after()
+#   if g:ft == 'vue'
+#     setf vue
+#     let g:ft = ''
+#   endif
+# endfunction
+# '''
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
@@ -50,3 +71,15 @@ hook_source = '''
 [[plugins]]
 repo = 'diepm/vim-rest-console'
 on_ft = 'rest'
+
+
+[[plugins]]
+repo = 'previm/previm'
+on_ft = 'md'
+hook_source = '''
+  let g:previm_open_cmd = 'open -a firefox'
+'''
+
+[[plugins]]
+repo = 'seeamkhan/robotframework-vim'
+on_ft = 'robot'

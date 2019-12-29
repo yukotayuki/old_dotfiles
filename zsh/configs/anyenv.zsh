@@ -13,7 +13,9 @@ export PATH="$HOME/go/bin:$PATH"
 eval "$(goenv init -)"
 
 
-export PATH="$HOME/.ndenv/shims:$PATH"
-eval "$(ndenv init -)"
+#export PATH="$HOME/.ndenv/shims:$PATH"
+#eval "$(ndenv init -)"
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
 
 export PATH="$HOME/.local/bin:$PATH"

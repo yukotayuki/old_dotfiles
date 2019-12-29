@@ -1,6 +1,6 @@
 LANG=en_US.UTF-8
 alias ls='ls -G'
-alias vim='nvim'
+#alias vim='nvim'
 export LDFLAGS="-L/usr/local/opt/gettext/lib"
 export CPPFLAGS="-I/usr/local/opt/gettext/include"
 export PATH="$PATH:/Users/joo/Work/bin"

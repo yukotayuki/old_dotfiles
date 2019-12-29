@@ -64,3 +64,6 @@ let g:lightline.component_type = {
       \ }
 '''
 
+[[plugins]]
+repo = 'edkolev/tmuxline.vim'
+depends = ['lightline.vim']
