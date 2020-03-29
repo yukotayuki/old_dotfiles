@@ -1,0 +1,13 @@
+[[plugins]]
+repo = 'tyru/caw.vim'
+on_event = ['BufEnter']
+
+#[[plugins]]
+#repo = 'alvan/vim-closetag'
+#on_event = ['InsertCharPre']
+#hook_source = '''
+#let g:closetag_filenames = '*.html,*.vue'
+#'''
+
+
+

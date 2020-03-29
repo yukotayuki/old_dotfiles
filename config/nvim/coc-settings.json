@@ -1,0 +1,28 @@
+{
+    "eslint.enable": true,
+    "eslint.filetypes": ["javascript", "vue"],
+    "eslint.run": "onType",
+    "eslint.autoFixOnSave": true,
+    "json.enable": true,
+    "json.format.enable": false,
+    "suggest.floatEnable": true,
+    "vimlsp.diagnostic.enable": false,
+    "coc.preferences.formatOnSaveFiletypes": ["json"],
+    "coc.source.emoji.filetypes": [
+        "markdown",
+        "vue",
+        "javascript"
+    ],
+    "explorer.icon.enableNerdfont": true,
+    "explorer.presets": {
+        "floating": {
+            "position": "floating"
+        },
+        "home": {
+            "root-uri": "~"
+        }
+    },
+    "explorer.keyMappings": {
+        "u": "gotoParent"
+    }
+}

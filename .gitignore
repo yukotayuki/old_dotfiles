@@ -1,0 +1,12 @@
+.DS_Store
+
+.netrwhist
+config/nvim/sessions
+config/coc
+config/vue
+config/TabNine
+config/configstore
+
+*.bak
+*.swp
+*.swo

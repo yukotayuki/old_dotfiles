@@ -1,0 +1,7 @@
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
