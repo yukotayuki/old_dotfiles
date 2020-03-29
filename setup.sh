@@ -15,29 +15,51 @@ pyenv () {
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
     echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-    source ~/.bashrc
+    #source ~/.bashrc
+
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    export PATH="$PYENV_ROOT/shims:$PATH"
+    export PYENV_SHELL=bash
+    source '~/.pyenv/libexec/../completions/pyenv.bash'
+    command pyenv rehash 2>/dev/null
+    pyenv() {
+      local command
+      command="${1:-}"
+      if [ "$#" -gt 0 ]; then
+        shift
+      fi
+
+      case "$command" in
+      rehash|shell)
+        eval "$(pyenv "sh-$command" "$@")";;
+      *)
+        command pyenv "$command" "$@";;
+      esac
+    }
+
 
     # https://github.com/pyenv/pyenv/wiki#suggested-build-environment
     # ここはsudo権限がいるので、dockerだとRUNで実施しておく
     # VMは別scriptに切り出して最初に実行する
     apt install -y 
-    \ make 
-    \ build-essential 
-    \ libbz2-dev
-    \ libreadline-dev 
-    \ libffi-dev 
-    \ liblzma-dev
-    \ libsqlite3-dev 
-    \ libssl-dev 
-    \ zlib1g-dev 
-    \ wget 
-    \ curl 
-    \ llvm 
-    \ libncurses5-dev 
-    \ xz-utils 
-    \ tk-dev 
-    \ libxml2-dev
-    \ libxmlsec1-dev 
+        make \
+        build-essential \
+        libbz2-dev \
+        libreadline-dev \
+        libffi-dev \
+        liblzma-dev \
+        libsqlite3-dev \
+        libssl-dev \
+        zlib1g-dev \
+        wget \
+        curl \
+        llvm \
+        libncurses5-dev \
+        xz-utils \
+        tk-dev \
+        libxml2-dev \
+        libxmlsec1-dev 
 
     pyenv install $python_ver
     pyenv rehash
@@ -48,7 +70,27 @@ nodenv () {
     git clone git://github.com/nodenv/nodenv.git ~/.nodenv
     echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.bashrc
     echo 'eval "$(nodenv init -)"' >> ~/.bashrc
-    source ~/.bashrc
+    #source ~/.bashrc
+
+    export PATH="$HOME/.nodenv/shims:$PATH"
+    export NODENV_SHELL=bash
+    source '~/.nodenv/libexec/../completions/nodenv.bash'
+    command nodenv rehash 2>/dev/null
+    nodenv() {
+      local command
+      command="${1:-}"
+      if [ "$#" -gt 0 ]; then
+        shift
+      fi
+    
+      case "$command" in
+      rehash|shell)
+        eval "$(nodenv "sh-$command" "$@")";;
+      *)
+        command nodenv "$command" "$@";;
+      esac
+    }
+
 
     git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
 
