@@ -73,6 +73,7 @@ nodenv () {
     echo 'eval "$(nodenv init -)"' >> ~/.bashrc
     #source ~/.bashrc
 
+    export PATH="$HOME/.nodenv/bin:$PATH"
     export PATH="$HOME/.nodenv/shims:$PATH"
     export NODENV_SHELL=bash
     source "$HOME/.nodenv/libexec/../completions/nodenv.bash"
