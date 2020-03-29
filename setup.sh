@@ -21,7 +21,7 @@ pyenv () {
     export PATH="$PYENV_ROOT/bin:$PATH"
     export PATH="$PYENV_ROOT/shims:$PATH"
     export PYENV_SHELL=bash
-    source '~/.pyenv/libexec/../completions/pyenv.bash'
+    source "$HOME/.pyenv/libexec/../completions/pyenv.bash"
     command pyenv rehash 2>/dev/null
     pyenv() {
       local command
@@ -42,7 +42,7 @@ pyenv () {
     # https://github.com/pyenv/pyenv/wiki#suggested-build-environment
     # ここはsudo権限がいるので、dockerだとRUNで実施しておく
     # VMは別scriptに切り出して最初に実行する
-    apt install -y 
+    apt install -y \
         make \
         build-essential \
         libbz2-dev \
@@ -74,7 +74,7 @@ nodenv () {
 
     export PATH="$HOME/.nodenv/shims:$PATH"
     export NODENV_SHELL=bash
-    source '~/.nodenv/libexec/../completions/nodenv.bash'
+    source "$HOME/.nodenv/libexec/../completions/nodenv.bash"
     command nodenv rehash 2>/dev/null
     nodenv() {
       local command
