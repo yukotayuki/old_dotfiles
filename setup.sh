@@ -12,12 +12,10 @@ nodejs_ver=13.12.0
 
 pyenv () {
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
     echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
     echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
     echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+    source ~/.bashrc
 
     # https://github.com/pyenv/pyenv/wiki#suggested-build-environment
     # ここはsudo権限がいるので、dockerだとRUNで実施しておく
@@ -48,10 +46,9 @@ pyenv () {
 
 nodenv () {
     git clone git://github.com/nodenv/nodenv.git ~/.nodenv
-    export PATH="$HOME/.nodenv/bin:$PATH"
-    eval "$(nodenv init -)"
     echo 'export PATH="$HOME/.nodenv/bin:$PATH"' >> ~/.bashrc
     echo 'eval "$(nodenv init -)"' >> ~/.bashrc
+    source ~/.bashrc
 
     git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
 
