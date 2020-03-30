@@ -32,6 +32,11 @@ if has('termguicolors')
     endif
   endfor
 
+  " なぜかnvimで反映されないので強制"
+  if has('nvim')
+    colorscheme s:termcolor
+  endif
+
 else
   colorscheme default
 endif
