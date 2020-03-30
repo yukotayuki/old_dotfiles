@@ -11,6 +11,10 @@ python_ver=3.8.2
 nodejs_ver=13.12.0
 
 os_app_install () {
+    # vim8.1をインストール
+    add-apt-repository ppa:jonathonf/vim
+    apt update && apt install -y vim
+
     # https://github.com/pyenv/pyenv/wiki#suggested-build-environment
     # VMは別scriptに切り出して最初に実行する
     apt install -y \

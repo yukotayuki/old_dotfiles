@@ -37,17 +37,24 @@ for s:extension in s:extensions
 endfor
 
 
-"function! s:coc_extensions_installed_list() abort
+"function Coc_extensions_installed_list() abort
 "  "let stats = CocAction('extensionStats')
-"  let stats = coc#rpc#request('CocAction', ['extensionStats'])
-"  echo stats
-"  call filter(stats, 'v:val["isLocal"] == v:false')
-"  echo stats
-"  let list = map(stats, 'v:val["id"]')
-"  echo list
-"  let ret = join(list, "\n")
-"  echo ret
-"  return ret
+"  "echo coc#rpc#request('CocAction', ['extensionStats'])
+"  "echo stats
+"  "call filter(stats, 'v:val["isLocal"] == v:false')
+"  "echo stats
+"  "let list = map(stats, 'v:val["id"]')
+"  "echo list
+"  "let ret = join(list, "\n")
+"  "echo ret
+""  return ret
 "endfunction
+""
+""command! -nargs=0 CocExtensionsInstalledList call s:coc_extensions_installed_list()
 "
-"command! -nargs=0 CocExtensionsInstalledList call s:coc_extensions_installed_list()
+"let s:stats = coc#rpc#request('CocAction', ['extensionStats'])
+"echo s:stats
+"let s:stats = CocAction('extensionStats')
+"echo s:stats
+"
+"call Coc_extensions_installed_list()
