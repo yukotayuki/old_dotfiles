@@ -39,10 +39,12 @@ if dein#load_state(s:dein_cache)
   endif
 
   let s:dein_toml = s:dein_dir . '/dein.toml'
+  let s:airline = s:dein_dir . '/airline.toml'
   let s:dein_lazy_toml = s:dein_dir . '/dein_lazy.toml'
   let s:syntax_toml = s:dein_dir . '/syntax.toml'
 
   call dein#load_toml(s:dein_toml,  {'lazy': 0})
+  call dein#load_toml(s:airline,  {'lazy': 0})
   call dein#load_toml(s:dein_lazy_toml,  {'lazy': 1})
   call dein#load_toml(s:syntax_toml,  {'lazy': 1})
 

@@ -6,23 +6,15 @@ function! Myfunc(...) abort
   return join(list, "\n")
 endfunction
 
-"call CocAction('extensionStats')
-"echo CocAction('extensionStats')
-"let stas = CocAction('extensionStats')
-"echo stas
-"let stats = CocAction('extensionStats')
-"echo stas
-
-
-let dict = {'count': 2}
-function! dict.countdown(timer) abort
-  let self.count -= 1
-  if self.count
-    "echo self.count
-  else
-    call timer_stop(a:timer)
-    echo Myfunc()
-  endif
-endfunction
-
-let timer = timer_start(100, dict.countdown, {'repeat': -1})
+"let dict = {'count': 2}
+"function! dict.countdown(timer) abort
+"  let self.count -= 1
+"  if self.count
+"    "echo self.count
+"  else
+"    call timer_stop(a:timer)
+"    echo Myfunc()
+"  endif
+"endfunction
+"
+"let timer = timer_start(100, dict.countdown, {'repeat': -1})

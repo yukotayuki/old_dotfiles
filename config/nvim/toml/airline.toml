@@ -1,0 +1,24 @@
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+#depends = ['vim-airline-thems']
+hook_add = '''
+let g:airline_theme='ayu'
+"let g:airline_theme='custom_theme'
+let g:airline_powerline_fonts = 1
+" always show statusline: 2
+set laststatus=2
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tmuxline#snapshot_file='~/.tmuxline.conf'
+
+"let g:airline_statusline_ontop=1
+'''
+
+[[plugins]]
+repo = 'edkolev/tmuxline.vim'
+hook_source = '''
+" let g:tmuxline_theme = 'ayu'
+'''
