@@ -8,9 +8,6 @@ if has('clipboard')
   set clipboard+=unnamed
 endif
 
-syntax on
-
-
 "----------------------------------------------------------
 " colorscheme
 "----------------------------------------------------------
@@ -31,11 +28,6 @@ if has('termguicolors')
       colorscheme default
     endif
   endfor
-
-  " なぜかnvimで反映されないので強制"
-  if has('nvim')
-    colorscheme s:termcolor
-  endif
 
 else
   colorscheme default

@@ -8,7 +8,11 @@ filetype plugin indent off
 
 " dein.vim settings {{{
 " install dir {{{
-let s:dein_cache = expand('~/.cache/dein')
+let s:dein_cache = expand('~/.cache/vim/dein')
+if has('nvim')
+  let s:dein_cache = expand('~/.cache/nvim/dein')
+endif
+
 let s:dein_repo_dir = s:dein_cache . '/repos/github.com/Shougo/dein.vim'
 " }}}
 
