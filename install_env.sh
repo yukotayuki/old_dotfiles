@@ -1,41 +1,9 @@
 #!/bin/bash
 
-#nvim-app () {
-#    apt install software-properties-common -y
-#    add-apt-repository ppa:neovim-ppa/unstable
-#    apt update
-#    apt install neovim -y
-#}
 
 python_ver=3.8.2
-nodejs_ver=13.12.0
-
-os_app_install () {
-    # vim8.1をインストール
-    add-apt-repository ppa:jonathonf/vim
-    apt update && apt install -y vim
-
-    # https://github.com/pyenv/pyenv/wiki#suggested-build-environment
-    # VMは別scriptに切り出して最初に実行する
-    apt install -y \
-        make \
-        build-essential \
-        libbz2-dev \
-        libreadline-dev \
-        libffi-dev \
-        liblzma-dev \
-        libsqlite3-dev \
-        libssl-dev \
-        zlib1g-dev \
-        wget \
-        curl \
-        llvm \
-        libncurses5-dev \
-        xz-utils \
-        tk-dev \
-        libxml2-dev \
-        libxmlsec1-dev 
-}
+nodejs_ver=12.16.3
+go_ver=1.14.2
 
 pyenv_install () {
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv
@@ -104,9 +72,50 @@ nodejs_install () {
     nodenv global $nodejs_ver
 }
 
-os_app_install
-pyenv_install
-python_install
-nodenv_install
-nodejs_install
+goenv_install () {
+    git clone https://github.com/syndbg/goenv.git ~/.goenv
+    echo 'export GOENV_ROOT=$HOME/.goenv' >> ~/.bashrc
+    echo 'export PATH=$GOENV_ROOT/bin:$PATH' >> ~/.bashrc
+    echo 'eval "$(goenv init -)"' >> ~/.bashrc
+}
 
+go_install () {
+    export GOENV_ROOT=$HOME/.goenv
+    export PATH=$GOENV_ROOT/bin:$PATH
+    source "$HOME/.goenv/libexec/../completions/goenv.bash"
+    command goenv rehash 2>/dev/null
+    goenv() {
+      local command
+      command="${1:-}"
+      if [ "$#" -gt 0 ]; then
+        shift
+      fi
+    
+      case "$command" in
+      rehash|shell)
+        eval "$(goenv "sh-$command" "$@")";;
+      *)
+        command goenv "$command" "$@";;
+      esac
+    }
+
+    goenv install $go_ver
+    goenv rehash
+    goenv global $go_ver
+}
+
+
+if [ ! -e "$HOME/.pyenv" ]; then
+  pyenv_install
+  python_install
+fi
+
+if [ ! -e "$HOME/.nodenv" ]; then
+  nodenv_install
+  nodejs_install
+fi
+
+if [ ! -e "$HOME/.goenv" ]; then
+  goenv_install
+  go_install
+fi

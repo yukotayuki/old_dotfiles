@@ -17,3 +17,6 @@ runtime! _config/*.vim
 "runtime! _config/coc-extensions/*.vim
 
 set path+=~/.vim
+
+" 良さげなプラグインの紹介
+" https://aiya000.github.io/Maid/vimconf.swp.2018/#/57

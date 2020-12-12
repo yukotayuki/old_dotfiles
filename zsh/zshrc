@@ -20,10 +20,12 @@ source ~/.zsh/configs/aliases.zsh
 source ~/.zsh/configs/setopt.zsh
 source ~/.zsh/configs/misc.zsh
 source ~/.zsh/configs/anyenv.zsh
+#source ~/.zsh/configs/prompt.zsh
+
 #source ~/.zsh/configs/pwl.zsh
 #if [[ "$(pyenv version)" =~ ^3 ]]; then
 #  echo "yyy"
-  source ~/.zsh/configs/pwl-py.zsh
+  # source ~/.zsh/configs/pwl-py.zsh
 #else
 #  echo "ttt"
 #  precmd_functions=
@@ -37,3 +39,12 @@ source ~/.zsh/configs/anyenv.zsh
 #OS_ICON='%F{cyan} \uf302 %F{white}Mac OS%f'
 #OS_ICON='%F{cyan} \uf302%f'
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
+ss -a | grep -q $SSH_AUTH_SOCK
+if [ $? -ne 0   ]; then
+    rm -f $SSH_AUTH_SOCK
+    ( setsid socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:"/mnt/c/Users/joo/Application/wsl-ssh-agent/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork & ) >/dev/null 2>&1
+fi

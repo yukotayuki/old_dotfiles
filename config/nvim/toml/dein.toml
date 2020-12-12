@@ -17,6 +17,9 @@ repo = 'voldikss/vim-floaterm'
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
+[[plugins]]
+repo = 'tyru/caw.vim'
+
 #
 # Git
 #
@@ -25,6 +28,9 @@ repo = 'airblade/vim-gitgutter'
 hook_add = '''
 set updatetime=100
 '''
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
 
 #
 # icon (tablineにつけてくれる)
@@ -38,14 +44,58 @@ hook_add = '''
     let g:WebDevIconsNerdTreeAfterGlyphPadding = ' '
     let g:WebDevIconsNerdTreeBeforeGlyphPadding = ' '
     let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
-    let g:WebDevIconsOS = 'Darwin'
+    " let g:WebDevIconsOS = 'Darwin'
     " let g:webdevicons_conceal_nerdtree_brackets = 0
 '''
 
+#
+# htmlのclose tag
+#
 [[plugins]]
 repo = 'alvan/vim-closetag'
 hook_add = '''
 let g:closetag_filenames = '*.html,*.vue'
+'''
+
+#
+# Terminal
+#
+[[plugins]]
+repo = 'kassio/neoterm'
+
+
+#
+# ファイラー
+#
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-devicons.vim'
+hook_add = '''
+let g:fern#renderer = "devicons"
+'''
+
+[[plugins]]
+repo = 'LumaKernel/fern-mapping-fzf.vim'
+depends = ['fzf', 'fern.vim']
+hook_add = '''
+let s:dein_cache = expand('~/.cache/vim/dein')
+if has('nvim')
+  let s:dein_cache = expand('~/.cache/nvim/dein')
+endif
+
+let s:bin_dir = s:dein_cache . '/repos/github.com/junegunn/fzf.vim/bin/preview.sh'
+let s:preview_command = s:bin_dir . ' {}'
+let g:fern#mapping#fzf#fzf_options = {'options': ['--layout=reverse', '--info=inline', '--preview', s:preview_command ]}
 '''
 
 [[plugins]]

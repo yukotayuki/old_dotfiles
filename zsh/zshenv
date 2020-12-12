@@ -15,9 +15,12 @@ export SAVEHIST=100000
 
 export LANG=en_US.UTF-8
 
+export SSH_AUTH_SOCK=/mnt/c/Users/joo/Application/wsl-ssh-agent/ssh-agent.sock
 
-export TERM="xterm-256color"
-export PATH="$PATH:/Users/joo/Work/bin"
+export PATH="$PATH:$HOME/bin"
 
-export LESSOPEN="| src-hilite-lesspipe.sh %s"
-export LESS='-R'
+#export TERM="xterm-256color"
+#export PATH="$PATH:/Users/joo/Work/bin"
+
+#export LESSOPEN="| src-hilite-lesspipe.sh %s"
+#export LESS='-R'
