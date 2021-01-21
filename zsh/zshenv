@@ -21,3 +21,4 @@ export PATH="$PATH:/Users/joo/Work/bin"
 
 export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS='-R'
+source "$HOME/.cargo/env"

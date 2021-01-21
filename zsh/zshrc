@@ -20,20 +20,8 @@ source ~/.zsh/configs/aliases.zsh
 source ~/.zsh/configs/setopt.zsh
 source ~/.zsh/configs/misc.zsh
 source ~/.zsh/configs/anyenv.zsh
-#source ~/.zsh/configs/pwl.zsh
-#if [[ "$(pyenv version)" =~ ^3 ]]; then
-#  echo "yyy"
-  source ~/.zsh/configs/pwl-py.zsh
-#else
-#  echo "ttt"
-#  precmd_functions=
-#  PS1="%m%#"
-#fi
-#source ~/.zsh/configs/p9k.zsh
 
-#powerline-daemon -q
-#. /Users/joo/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#OS_ICON='%F{cyan} \uf302 %F{white}Mac OS%f'
-#OS_ICON='%F{cyan} \uf302%f'
-
+# 最後に入れる
+eval "$(starship init zsh)"
