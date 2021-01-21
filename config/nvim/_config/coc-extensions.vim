@@ -10,6 +10,7 @@ let s:extensions = [
     \ 'coc-imselect',
     \ 'coc-json',
     \ 'coc-lists',
+    \ 'coc-tsserver',
     \ 'coc-markdownlint',
     \ 'coc-pairs',
     \ 'coc-prettier',
@@ -17,6 +18,7 @@ let s:extensions = [
     \ 'coc-vetur',
     \ 'coc-vimlsp',
     \ 'coc-word',
+    \ 'coc-clangd',
     \ ]
 
 function! s:coc_all_install() abort

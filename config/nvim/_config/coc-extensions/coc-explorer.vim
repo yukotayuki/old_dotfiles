@@ -38,7 +38,7 @@ let g:coc_explorer_global_presets = {
 \   }
 \ }
 
-nmap <space>e  :call <SID>select_folder()<CR>
-nmap <space>v  :CocCommand explorer --preset .vim<CR>
+"nmap <space>e  :call <SID>select_folder()<CR>
+"nmap <space>v  :CocCommand explorer --preset .vim<CR>
 
 

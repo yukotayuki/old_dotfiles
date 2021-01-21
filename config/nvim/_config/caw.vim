@@ -5,5 +5,5 @@ if empty(globpath(&rtp, 'autoload/caw.vim'))
 endif
 
 " caw toggle
-nmap <Leader>c <Plug>(caw:hatpos:toggle)
-vmap <Leader>c <Plug>(caw:hatpos:toggle)
+nmap <Space>c <Plug>(caw:hatpos:toggle)
+vmap <Space>c <Plug>(caw:hatpos:toggle)

@@ -1,6 +1,6 @@
-[[plugins]]
-repo = 'tyru/caw.vim'
-on_event = ['BufEnter']
+#[[plugins]]
+#repo = 'tyru/caw.vim'
+#on_event = ['BufEnter']
 
 #[[plugins]]
 #repo = 'alvan/vim-closetag'

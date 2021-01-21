@@ -1,19 +1,22 @@
 scriptencoding utf-8
 
 
-let mapleader = "\<Space>"
+"let mapleader = "\<Space>"
+let mapleader = "\\"
 
 " vim-terminal内でterminal-normalモードに移行する
-"tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc><Esc> <C-\><C-n>
+"tnoremap <Space><Esc> <C-\><C-n>
 
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>d :vs<CR>
-nnoremap <Leader><S-d> :sp<CR>
-"nnoremap <Leader><Space> :set expandtab<CR>
+nnoremap <Space>w :w<CR>
+nnoremap <Space>q :qa<CR>
+nnoremap <C-c> :bd<CR>
+nnoremap <Space>d :vs<CR>
+nnoremap <Space><S-d> :sp<CR>
+"nnoremap <Space><Space> :set expandtab<CR>
 
 " open setting files
-nnoremap <Leader>, :edit $MYVIMRC<CR>
+nnoremap <Space>, :edit $MYVIMRC<CR>
 nnoremap ,t :edit ~/.config/nvim/toml<CR>
 
 " 移動
@@ -50,6 +53,6 @@ noremap <silent> tp :tabprevious<CR>
 
 
 if has('mac')
-  autocmd BufNewFile,BufRead *.md nnoremap <Leader>r :PrevimOpen<CR>
+  autocmd BufNewFile,BufRead *.md nnoremap <Space>r :PrevimOpen<CR>
 "elseif has('unix')
 endif

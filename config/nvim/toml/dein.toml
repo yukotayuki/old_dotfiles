@@ -17,6 +17,9 @@ repo = 'voldikss/vim-floaterm'
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
+[[plugins]]
+repo = 'tyru/caw.vim'
+
 #
 # Git
 #
@@ -25,6 +28,9 @@ repo = 'airblade/vim-gitgutter'
 hook_add = '''
 set updatetime=100
 '''
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
 
 #
 # icon (tablineにつけてくれる)
@@ -47,6 +53,66 @@ repo = 'alvan/vim-closetag'
 hook_add = '''
 let g:closetag_filenames = '*.html,*.vue'
 '''
+
+[[plugins]]
+repo = 'kassio/neoterm'
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+#hook_add = '''
+#set rtp+=/usr/local/opt/fzf
+#'''
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-devicons.vim'
+hook_add = '''
+let g:gern#render = "devicons"
+'''
+
+[[plugins]]
+repo = 'LumaKernel/fern-mapping-fzf.vim'
+depends = ['fzf', 'fern.vim']
+hook_add = '''
+let s:dein_cache = expand('~/.cache/vim/dein')
+if has('nvim')
+  let s:dein_cache = expand('~/.cache/nvim/dein')
+endif
+
+let s:bin_dir = s:dein_cache . '/repos/github.com/junegunn/fzf.vim/bin/preview.sh'
+let s:preview_command = s:bin_dir . ' {}'
+let g:fern#mapping#fzf#fzf_options = {'options': ['--layout=reverse', '--info=inline', '--preview', s:preview_command]}
+'''
+
+
+#
+# session
+#
+#[[plugins]]
+#repo = 'skanehira/vsession'
+#depends = 'fzf'
+#hook_add = '''
+#let g:vsession_path = '~/.vim/sessions'
+#let g:vsession_use_fzf = 1
+#'''
+
+#[[plugins]]
+#repo = 'xolox/vim-misc'
+#
+#[[plugins]]
+#repo = 'xolox/vim-session'
+#depends = 'vim-misc'
+#hook_add = '''
+#let g:session_autosave = 'no'
+#let g:session_autoload = 'no'
+#'''
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
