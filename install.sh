@@ -104,7 +104,7 @@ nodejs_install () {
     nodenv global $nodejs_ver
 }
 
-os_app_install
+#os_app_install
 pyenv_install
 python_install
 nodenv_install
