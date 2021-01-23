@@ -1,0 +1,27 @@
+export ZPLUG_HOME=/usr/local/opt/zplug
+
+if [[ -f $ZPLUG_HOME/init.zsh ]]; then
+  source $ZPLUG_HOME/init.zsh
+  source ~/.zsh/zplug
+
+  # Install plugins if there are plugins that have not been installed
+  if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+      echo; zplug install
+    fi
+  fi
+
+  # Then, source plugins and add commands to $PATH
+  zplug load
+fi
+
+source ~/.zsh/configs/aliases.zsh
+source ~/.zsh/configs/setopt.zsh
+source ~/.zsh/configs/misc.zsh
+source ~/.zsh/configs/anyenv.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# 最後に入れる
+eval "$(starship init zsh)"
