@@ -25,6 +25,13 @@ let b:apps['zsh']['setup'] = [
   \   }
   \ ]
 
+let b:apps['zinit'] = {}
+let b:apps['zinit']['install'] = [
+  \   {
+  \     'support_os': 'all',
+  \     'script': 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"',
+  \   }
+  \ ]
 
 "let b:apps['starship'] = {}
 "let b:apps['starship']['install'] = [
