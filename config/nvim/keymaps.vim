@@ -24,6 +24,8 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+nnoremap <Right> <C-f>
+nnoremap <Left> <C-b>
 imap <C-f> <Right>
 imap <C-b> <Left>
 imap <C-e> <Home>
@@ -33,8 +35,8 @@ nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
-nnoremap s> <C-w>>
-nnoremap s< <C-w><
+nnoremap s. <C-w>>
+nnoremap s, <C-w><
 nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L

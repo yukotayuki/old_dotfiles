@@ -20,5 +20,8 @@ zplug "felixr/docker-zsh-completion"
 zplug "peco/peco", as:command, from:gh-r
 zplug "mollifier/anyframe"
 
+# prompt カスタマイズ
+#zplug "woefe/git-prompt.zsh", use:"{git-prompt.zsh,examples/default.zsh}"
+
 #zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme, as:theme, defer:3
 #DEFAULT_USER='davy'

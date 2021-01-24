@@ -1,4 +1,4 @@
-zstyle :compinstall filename '/Users/joo/.zshrc'
+zstyle :compinstall filename '/home/joo/.zshrc'
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' ignore-parents parent pwd ..
