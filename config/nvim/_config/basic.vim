@@ -58,6 +58,13 @@ set showtabline=2
 " change color from over 80 lines
 let &colorcolumn="80,".join(range(81,999),",")
 
+" vimでbackspaceを有効に
+set backspace=indent,eol,start
+
+set belloff=all
+
+" session
+"set sessionoptions+=options
 
 "----------------------------------------------------------
 " 自動保存

@@ -13,11 +13,6 @@ eval "$(goenv init -)"
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 
-# jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
+# nim
+export PATH="$HOME/.nimble/bin:$PATH"
 # export PATH="$HOME/.local/bin:$PATH"
-
-# choosenim (nim package manager)
-export PATH=/home/joo/.nimble/bin:$PATH

@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 if has('nvim')
-  let $GIT_EDITOR='nvr'
+  let $GIT_EDITOR = 'nvr'
 endif
 
 if empty(globpath(&rtp, 'autoload/neoterm.vim'))

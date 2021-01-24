@@ -6,6 +6,12 @@ config/coc
 config/vue
 config/TabNine
 config/configstore
+config/gcloud
+config/htop
+config/wireshark
+config/yarn
+config/powerline-shell
+config/karabiner
 
 *.bak
 *.swp

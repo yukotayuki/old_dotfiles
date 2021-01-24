@@ -1,0 +1,48 @@
+add_newline = false
+
+scan_timeout = 10
+
+[character]
+success_symbol = "[❯❯❯](blue)"
+error_symbol = "[✗](bold red)"
+use_symbol_for_status = true
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[gcloud]
+disabled = true
+
+[git_branch]
+disabled = false
+style = "green"
+format = "[$symbol$branch]($style) "
+truncation_length = 4
+truncation_symbol = ""
+
+[git_commit]
+disabled = false
+commit_hash_length = 4
+tag_symbol = "🔖 "
+
+[git_state]
+disabled = false
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[git_status]
+disabled = true
+
+[line_break]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[package]
+disabled = true
+
+[custom.vim]
+command = "echo Vim"
+when = """ test -n "$VIMRUNTIME" """

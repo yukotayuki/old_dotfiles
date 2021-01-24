@@ -33,4 +33,14 @@
             "filetypes": ["nim"]
         }
     }
+  },
+  "explorer.keyMappings": {
+    "u": "gotoParent"
+  },
+  "languageserver": {
+    "nim": {
+      "command": "nimlsp",
+      "filetypes": ["nim"]
+    }
+  }
 }

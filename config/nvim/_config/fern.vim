@@ -6,7 +6,7 @@ endif
 
 " fern toggle
 nnoremap ,f :Fern .<CR>
-nnoremap <space>v :Fern $HOME/.vim<CR>
+nnoremap <Space>v :Fern $HOME/.vim<CR>
 
 " このURLにTIPSがあるので
 "https://github.com/lambdalisue/fern.vim/wiki/Tips#perform-tcd-when-enterleave-only-in-drawer-style
