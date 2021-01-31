@@ -5,8 +5,8 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'vim-airline/vim-airline'
 #depends = ['vim-airline-thems']
 hook_add = '''
-"let g:airline_theme='ayu'
-let g:airline_theme='custom_theme'
+let g:airline_theme='ayu'
+"let g:airline_theme='custom_theme'
 let g:airline_powerline_fonts = 1
 " always show statusline: 2
 set laststatus=2

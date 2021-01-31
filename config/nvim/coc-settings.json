@@ -1,38 +1,37 @@
 {
-    "eslint.enable": true,
-    "eslint.filetypes": ["javascript", "vue"],
-    "eslint.run": "onType",
-    "eslint.autoFixOnSave": true,
-    "json.enable": false,
-    "json.format.enable": false,
-    "suggest.floatEnable": true,
-    "vimlsp.diagnostic.enable": false,
-    "coc.preferences.formatOnSaveFiletypes": [""],
-    "coc.source.emoji.filetypes": [
-        "markdown",
-        "vue",
-        "javascript"
-    ],
-    "coc.source.word.enable": false,
-    "explorer.icon.enableNerdfont": true,
-    "explorer.presets": {
-        "floating": {
-            "position": "floating"
-        },
-        "home": {
-            "root-uri": "~"
-        }
-    },
-    "explorer.keyMappings": {
-        "u": "gotoParent"
-    },
-    "clangd.path": "/home/joo/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
-    "languageserver": {
+  "eslint.enable": true,
+  "eslint.filetypes": ["javascript", "vue"],
+  "eslint.run": "onType",
+  "eslint.autoFixOnSave": true,
+  "json.enable": false,
+  "json.format.enable": false,
+  "suggest.floatEnable": true,
+  "vimlsp.diagnostic.enable": false,
+  "coc.preferences.formatOnSaveFiletypes": [""],
+  "coc.source.emoji.filetypes": [
+      "markdown",
+      "vue",
+      "javascript"
+  ],
+  "coc.source.word.enable": false,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.presets": {
+      "floating": {
+          "position": "floating"
+      },
+      "home": {
+          "root-uri": "~"
+      }
+  },
+  "explorer.keyMappings": {
+      "u": "gotoParent"
+  },
+  "clangd.path": "/home/joo/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
+  "languageserver": {
         "nim": {
             "command": "nimlsp",
             "filetypes": ["nim"]
         }
-    }
   },
   "explorer.keyMappings": {
     "u": "gotoParent"

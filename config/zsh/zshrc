@@ -26,7 +26,7 @@ source ~/.zsh/configs/aliases.zsh
 source ~/.zsh/configs/setopt.zsh
 source ~/.zsh/configs/misc.zsh
 source ~/.zsh/configs/anyenv.zsh
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # ====
 
 typeset -U path PATH

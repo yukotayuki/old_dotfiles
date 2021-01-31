@@ -7,7 +7,8 @@
 alias ls="ls -G"
 #alias ls="lsd"
 alias l='ls'
-alias vim='nvim'
+alias vim='/opt/homebrew/bin/vim'
+#alias vim='nvim'
 alias ll='ls -l'
 alias la='ls -a'
 alias weather='curl http://wttr.in/'
