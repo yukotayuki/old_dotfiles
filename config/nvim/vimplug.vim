@@ -1,16 +1,28 @@
 call plug#begin('~/.vim/plugged')
 
-" color theme
+" colorscheme
 Plug 'ayu-theme/ayu-vim'
+
+" syntax
+Plug 'cespare/vim-toml'
+Plug 'posva/vim-vue'
+Plug 'zah/nim.vim'
+
+" html
+Plug 'mattn/emmet-vim'
+" comment
+Plug 'tyru/caw.vim'
 
 " lsp
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-lsp-icons'
 
-" comment plugin
-Plug 'tyru/caw.vim'
+" snippet
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 
 " icon
 Plug 'ryanoasis/vim-devicons'
@@ -28,6 +40,7 @@ Plug 'lambdalisue/fern.vim'
 "Plug 'lambdalisue/fern-renderer-devicons.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/fern-git-status.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 
 " Terminal
@@ -35,11 +48,6 @@ Plug 'kassio/neoterm'
 
 " help
 Plug 'vim-jp/vimdoc-ja'
-
-" syntax highlight
-Plug 'cespare/vim-toml'
-Plug 'posva/vim-vue'
-Plug 'zah/nim.vim'
 
 "airline
 Plug 'vim-airline/vim-airline-themes'

@@ -26,9 +26,11 @@ vnoremap j gj
 vnoremap k gk
 nnoremap <Right> <C-f>
 nnoremap <Left> <C-b>
-imap <C-f> <Right>
-imap <C-b> <Left>
-imap <C-e> <Home>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-e> <End>
+inoremap <C-a> <Home>
+inoremap <C-l> <Esc>
 
 " pain keybind
 nnoremap sj <C-w>j
