@@ -1,4 +1,6 @@
-scriptencoding utf-8
+if $VIMLSP != "coc"
+  finish
+endif
 
 if empty(globpath(&rtp, 'autoload/coc.vim'))
   finish
@@ -46,12 +48,4 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() :
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-augroup mycoc
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
 

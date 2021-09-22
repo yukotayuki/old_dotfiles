@@ -4,25 +4,53 @@ if empty(globpath(&rtp, 'autoload/fern.vim'))
   finish
 endif
 
+function! s:fern_init() abort
+  " nerdfontの使用
+  let g:fern#renderer="nerdfont"
+  " fernを開いた時のカーソルを隠す
+  let g:fern#smart_cursor = has('nvim-0.5.0') ? 'hide' : 'stick'
+endfunction
+
+function! s:fern_local_init() abort
+  nmap <buffer>
+        \ <Plug>(fern-my-enter-and-tcd)
+        \ <Plug>(fern-action-enter)<Plug>(fern-wait)<Plug>(fern-action-tcd:root)
+  nmap <buffer>
+        \ <Plug>(fern-my-leave-and-tcd)
+        \ <Plug>(fern-action-leave)<Plug>(fern-wait)<Plug>(fern-action-tcd:root)
+  nmap <buffer><expr>
+        \ <Plug>(fern-my-open-or-enter-and-tcd)
+        \ fern#smart#leaf(
+        \   "\<Plug>(fern-action-open)",
+        \   "\<Plug>(fern-my-enter-and-tcd)",
+        \ )
+  nmap <buffer><expr>
+        \ <Plug>(fern-my-open-or-enter)
+        \ fern#smart#drawer(
+        \   "\<Plug>(fern-my-open-or-enter-and-tcd)",
+        \   "\<Plug>(fern-action-open-or-enter)",
+        \ )
+  nmap <buffer><expr>
+        \ <Plug>(fern-my-leave)
+        \ fern#smart#drawer(
+        \   "\<Plug>(fern-my-leave-and-tcd)",
+        \   "\<Plug>(fern-action-leave)",
+        \ )
+  nmap <buffer><nowait> <C-m> <Return>
+  nmap <buffer><nowait> <C-h> <Backspace>
+  nmap <buffer><nowait> <Return>    <Plug>(fern-my-open-or-enter)
+  nmap <buffer><nowait> <Backspace> <Plug>(fern-my-leave)
+  nmap <buffer><nowait> T <Plug>(fern-action-terminal)
+  nnoremap <buffer><nowait> ~ :<C-u>Fern ~<CR>
+endfunction
+
 " fern toggle
-nnoremap ,f :Fern .<CR>
-nnoremap <Space>v :Fern $HOME/.vim<CR>
+nnoremap ,f :<C-u>Fern .<CR>
+" nnoremap <Space>v :<C-u>Fern $HOME/.vim<CR>
 
-" このURLにTIPSがあるので
-"https://github.com/lambdalisue/fern.vim/wiki/Tips#perform-tcd-when-enterleave-only-in-drawer-style
+augroup my_fern
+  autocmd! *
+  autocmd VimEnter * call s:fern_init()
+  autocmd FileType fern call s:fern_local_init()
+augroup END
 
-" fern.vimの内部からしか呼び出せないようだ
-"nmap <Space>t <Plug>(fern-action-terminal)
-
-" fern.vimには画面を閉じる操作がなさそうなのでvim側でバッファごと閉じる
-" => ctrl + o で前のバッファに戻れる
-"    ctrl + i で戻す前のバッファに戻れる
-"function DelBufferAndNext() 
-"    let s:old_bufnr = bufnr('%') 
-"    bnext 
-"    exec s:old_bufnr . 'bd' 
-"    unlet s:old_bufnr 
-"endfunction 
-"command -nargs=0 BD call DelBufferAndNext() 
-"
-"nnoremap <C-c> :BD<CR>
