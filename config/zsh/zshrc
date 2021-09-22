@@ -27,13 +27,53 @@ source ~/.zsh/configs/setopt.zsh
 source ~/.zsh/configs/misc.zsh
 source ~/.zsh/configs/anyenv.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# ====
+
+# vim settings
+export VIMLSP="vim-lsp"
+# export VIMLSP="coc"
 
 typeset -U path PATH
 path=(
 	/opt/homebrew/bin(N-/)
 	$path
 )
+
+# moddable
+# export MODDABLE="$HOME/Projects/moddable"
+# export PATH="$MODDABLE/build/bin/mac/release:$PATH"
+# export IDF_PATH="$HOME/esp32/esp-idf"
+# export UPLOAD_PORT="/dev/cu.usbserial-0212FE91"
+# export AMPY_PORT="/dev/cu.SLAB_USBtoUART"
+
+# platformio
+export PATH="$PATH:$HOME/.platformio/penv/bin"
+
+# STM32
+export PATH="$PATH:/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin"
+
+# rosetta2 切り替え設定
+typeset -U path PATH
+path=(
+	/opt/homebrew/bin(N-/)
+	/usr/local/bin(N-/)
+	$path
+)
+
+if (( $+commands[sw_vers] )) && (( $+commands[arch] )); then
+	[[ -x /usr/local/bin/brew ]] && alias brew="arch -arch x86_64 /usr/local/bin/brew"
+	alias x64='exec arch -x86_64 /bin/zsh'
+	alias a64='exec arch -arm64e /bin/zsh'
+	switch-arch() {
+		if  [[ "$(uname -m)" == arm64 ]]; then
+			arch=x86_64
+		elif [[ "$(uname -m)" == x86_64 ]]; then
+			arch=arm64e
+		fi
+		exec arch -arch $arch /bin/zsh
+	}
+fi
+
+setopt magic_equal_subst
 
 # ミニマムなPROMT Custom
 eval "$(starship init zsh)"

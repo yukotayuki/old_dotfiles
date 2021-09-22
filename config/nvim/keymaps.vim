@@ -54,6 +54,7 @@ noremap <silent> tc :tabclose<CR>
 noremap <silent> tn :tabnext<CR>
 noremap <silent> tp :tabprevious<CR>
 
+nnoremap <C-e> :<C-u>CtrlPLauncher<CR>
 
 
 if has('mac')

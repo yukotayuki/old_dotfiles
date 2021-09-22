@@ -11,6 +11,7 @@ alias vim='/opt/homebrew/bin/vim'
 #alias vim='nvim'
 alias ll='ls -l'
 alias la='ls -a'
+alias cdwork='cd $HOME/Documents/GitHub/'
 alias weather='curl http://wttr.in/'
 #alias search_file='find * -type f -print | xargs grep '
 alias tsource="tmux source"
