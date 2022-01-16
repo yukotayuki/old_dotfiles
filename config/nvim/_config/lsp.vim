@@ -46,14 +46,15 @@ let g:asyncomplete_auto_completeopt = 1
 let g:asyncomplete_popup_delay = 400
 let g:lsp_text_edit_enabled = 0
 
-let g:lsp_settings = {
-     \ 'eslint-language-server': {
-     \   'allowlist': ['javascript', 'typescript', 'vue'],
-     \ },
-     \}
+" let g:lsp_settings = {
+"     \ 'eslint-language-server': {
+"     \   'allowlist': ['javascript', 'typescript', 'vue'],
+"     \ },
+"     \}
 
 " let g:lsp_settings_filetype_javascript = ['typescript-language-server', 'eslint-language-server']
 " let g:lsp_settings_filetype_typescript = ['typescript-language-server', 'eslint-language-server']
+let g:lsp_settings_filetype_typescript = ['deno', 'typescript-language-server']
 " let g:lsp_settings_filetype_svelte = ['svelte-language-server']
 
 augroup my_autoSave

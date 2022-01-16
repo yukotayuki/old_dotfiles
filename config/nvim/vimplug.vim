@@ -9,6 +9,10 @@ Plug 'posva/vim-vue'
 Plug 'zah/nim.vim'
 Plug 'evanleck/vim-svelte'
 Plug 'google/vim-jsonnet'
+Plug 'jjo/vim-cue'
+
+"spell checker
+Plug 'kamykn/spelunker.vim'
 
 " html
 Plug 'mattn/emmet-vim'
@@ -45,7 +49,8 @@ Plug 'ryanoasis/vim-devicons'
 
 " git
 Plug 'airblade/vim-gitgutter'
-Plug 'lambdalisue/gina.vim'
+" Plug 'lambdalisue/gina.vim'
+Plug 'tpope/vim-fugitive'
 
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -57,10 +62,13 @@ Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/glyph-palette.vim'
 Plug 'LumaKernel/fern-mapping-fzf.vim'
 
 " Terminal
 Plug 'kassio/neoterm'
+Plug 'voldikss/fzf-floaterm'
+Plug 'voldikss/vim-floaterm'
 
 " ctrlP
 Plug 'ctrlpvim/ctrlp.vim'
